@@ -5,7 +5,7 @@
 A package for displaying sleek iOS-style toast notifications with SwiftUI. It's intended to mimic the toasts seen when charging an Apple Pencil or connecting AirPods.
 
 ## Examples
-<img src="Examples-Light.jpg">
+<img src="Examples.jpg">
 
 ## Setup
 
@@ -24,19 +24,21 @@ Drag and drop the `ToastUI` folder into your project.
 ToastUI is built for SwiftUI. Use a `ZStack` to layer a `ToastView` on top of the view you want to display a toast for. Like so:
 ```swift
 ZStack {
-    ToasterView(title: "Title",
-                subtitle: "Subtitle",
-                position: .top,
-                duration: 5)
+    ToastView(
+        title: "Title",
+        subtitle: "Subtitle",
+        position: .top,
+        duration: 5)
     
     Text("Placeholder")
     // and some other views...
 }
 ```
 Once the toast fades out, the view is removed from the hierarchy.
+The view automatically adapts to the current color scheme (light or dark mode).
 
 ## Options
-- `symbol`: A string that refers to an SF symbol displayed on the left of the text in the toast. Optional.
+- `image`: A SwiftUI `Image` displayed on the left side of the toast. Optional.
 - `title`: A title string that will be displayed at the top of the toast. Required.
 - `subtitle`: A subtitle string that will be displayed at the bottom of the toast. Optional.
 - `position`: `.top` places the toast at the top of the stack, `.bottom` places it at the bottom. Required.

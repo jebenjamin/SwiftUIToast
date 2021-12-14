@@ -8,9 +8,9 @@
 import SwiftUI
 
 @available(iOS 13.0, *)
-public struct ToasterView: View {
+public struct ToastView: View {
     
-    var symbol: String?
+    var image: Image?
     var title: String
     var subtitle: String?
     var position: ToastPosition
@@ -27,8 +27,8 @@ public struct ToasterView: View {
                 }
                 
                 HStack {
-                    if symbol != nil {
-                        Image(systemName: symbol!)
+                    if image != nil {
+                        image
                             .padding([.leading, .top, .bottom])
                             .imageScale(.large)
                     }
@@ -44,11 +44,11 @@ public struct ToasterView: View {
                                 .font(.subheadline)
                                 .bold()
                                 .foregroundColor(.secondary)
-                                .padding(.trailing)
+                                .padding([.leading, .trailing])
                         }
                     }
                 }
-                .background(Color(UIColor.systemBackground))
+                .background(Color(UIColor.secondarySystemBackground))
                 .clipShape(Capsule())
                 .shadow(radius: 7)
                 .padding()
