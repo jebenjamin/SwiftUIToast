@@ -1,6 +1,6 @@
 # SwiftUIToast
 
-![](https://img.shields.io/github/license/jebenjamin/ToastUI)
+![](https://img.shields.io/github/license/jebenjamin/SwiftUIToast)
 
 A package for displaying sleek iOS-style toast notifications with SwiftUI. It's intended to mimic the toasts seen when charging an Apple Pencil or connecting AirPods.
 
