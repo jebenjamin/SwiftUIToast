@@ -13,8 +13,14 @@ A package for displaying sleek iOS-style toast notifications with SwiftUI. It's 
 ToastUI is a Swift package that can be installed through the 'Package Dependencies' list in your Xcode project. Or, you can add the following line to your own Package.swift file:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/jebenjamin/ToastUI", from: "1.0.0")
+    .package(url: "https://github.com/jebenjamin/ToastUI", from: "1.0.1")
 ]
+```
+
+### CocoaPods
+Add the following line to your `PodFile`:
+```ruby
+pod 'ToastUI'
 ```
 
 ### Manually
@@ -48,4 +54,4 @@ The view automatically adapts to the current color scheme (light or dark mode).
 Requires iOS 13.0+ or Mac Catalyst 13.0+. 
 
 ## License
-ToastUI uses the MIT license. A copy is available in `LICENSE.md`.
+ToastUI uses the MIT license. A copy is available in `LICENSE`.
