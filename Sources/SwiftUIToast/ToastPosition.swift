@@ -1,6 +1,6 @@
 //
 //  ToastPosition.swift
-//  ToastUI
+//  SwiftUIToast
 //
 //  Created by Jonathan Benjamin on 14/12/2021.
 //

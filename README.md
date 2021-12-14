@@ -1,4 +1,4 @@
-# ToastUI
+# SwiftUIToast
 
 ![](https://img.shields.io/github/license/jebenjamin/ToastUI)
 
@@ -10,24 +10,24 @@ A package for displaying sleek iOS-style toast notifications with SwiftUI. It's 
 ## Setup
 
 ### Swift Package Manager
-ToastUI is a Swift package that can be installed through the 'Package Dependencies' list in your Xcode project. Or, you can add the following line to your own Package.swift file:
+SwiftUIToast is a Swift package that can be installed through the 'Package Dependencies' list in your Xcode project. Or, you can add the following line to your own Package.swift file:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/jebenjamin/ToastUI", from: "1.0.1")
+    .package(url: "https://github.com/jebenjamin/SwiftUIToast", from: "1.0.1")
 ]
 ```
 
 ### CocoaPods
 Add the following line to your `PodFile`:
 ```ruby
-pod 'ToastUI'
+pod 'SwiftUIToast'
 ```
 
 ### Manually
-Drag and drop the `ToastUI` folder into your project.
+Drag and drop the `SwiftUIToast` folder into your project.
 
 ## Usage
-ToastUI is built for SwiftUI. Use a `ZStack` to layer a `ToastView` on top of the view you want to display a toast for. Like so:
+SwiftUIToast is built for SwiftUI. Use a `ZStack` to layer a `ToastView` on top of the view you want to display a toast for. Like so:
 ```swift
 ZStack {
     ToastView(
@@ -54,4 +54,4 @@ The view automatically adapts to the current color scheme (light or dark mode).
 Requires iOS 13.0+ or Mac Catalyst 13.0+. 
 
 ## License
-ToastUI uses the MIT license. A copy is available in `LICENSE`.
+SwiftUIToast uses the MIT license. A copy is available in `LICENSE`.
