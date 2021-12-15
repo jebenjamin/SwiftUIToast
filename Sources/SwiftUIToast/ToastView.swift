@@ -14,10 +14,22 @@ public struct ToastView: View {
     var title: String
     var subtitle: String?
     var position: ToastPosition
-    @State var duration: Double?
+    var duration: Double?
     
     @State private var isActive: Bool = true
     @State private var fadeInOut: Bool = true
+    
+    public init(image: Image? = nil,
+                title: String,
+                subtitle: String? = nil,
+                position: ToastPosition,
+                duration: Double? = nil) {
+        self.image = image
+        self.title = title
+        self.subtitle = subtitle
+        self.position = position
+        self.duration = duration
+    }
     
     public var body: some View {
         if isActive {
