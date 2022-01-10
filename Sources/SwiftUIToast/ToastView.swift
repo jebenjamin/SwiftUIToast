@@ -62,7 +62,7 @@ public struct ToastView: View {
                 }
                 .background(Color(UIColor.secondarySystemBackground))
                 .clipShape(Capsule())
-                .shadow(radius: 7)
+                .shadow(radius: 5)
                 .padding()
                 .onAppear {
                     if duration != nil {
