@@ -13,7 +13,7 @@ A package for displaying sleek iOS-style toast notifications with SwiftUI. It's 
 SwiftUIToast is a Swift package that can be installed through the 'Package Dependencies' list in your Xcode project. Or, you can add the following line to your own Package.swift file:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/jebenjamin/SwiftUIToast", from: "1.0.1")
+    .package(url: "https://github.com/jebenjamin/SwiftUIToast", from: "1.0.2")
 ]
 ```
 
