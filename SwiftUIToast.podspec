@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SwiftUIToast"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "A Swift package for displaying sleek iOS-style toast notifications."
   spec.description  = <<-DESC
   A package for displaying sleek iOS-style toast notifications with SwiftUI. It's intended to mimic the toasts seen when charging an Apple Pencil or connecting AirPods.
