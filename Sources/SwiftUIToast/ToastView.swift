@@ -10,49 +10,37 @@ import SwiftUI
 @available(iOS 13.0, *)
 public struct ToastView: View {
     
-    var image: Image?
-    var title: String
-    var subtitle: String?
-    var position: ToastPosition
-    var duration: Double?
+    var options: ToastOptions
     
     @State private var isActive: Bool = true
     @State private var fadeInOut: Bool = true
     
-    public init(image: Image? = nil,
-                title: String,
-                subtitle: String? = nil,
-                position: ToastPosition,
-                duration: Double? = nil) {
-        self.image = image
-        self.title = title
-        self.subtitle = subtitle
-        self.position = position
-        self.duration = duration
+    public init(options: ToastOptions) {
+        self.options = options
     }
     
     public var body: some View {
         if isActive {
             VStack {
-                if position == .bottom {
+                if options.position == .bottom {
                     Spacer()
                 }
                 
                 HStack {
-                    if image != nil {
-                        image
+                    if options.image != nil {
+                        options.image
                             .padding([.leading, .top, .bottom])
                             .imageScale(.large)
                     }
                     
                     VStack {
-                        Text(title)
+                        Text(options.title)
                             .font(.headline)
                             .padding(.bottom, 0.1)
                             .padding([.leading, .trailing])
                         
-                        if subtitle != nil {
-                            Text(subtitle!)
+                        if options.subtitle != nil {
+                            Text(options.subtitle!)
                                 .font(.subheadline)
                                 .bold()
                                 .foregroundColor(.secondary)
@@ -65,16 +53,13 @@ public struct ToastView: View {
                 .shadow(radius: 5)
                 .padding()
                 .onAppear {
-                    if duration != nil {
+                    if options.duration != nil {
                         withAnimation {
                             fadeInOut.toggle()
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + duration!, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + options.duration!, execute: {
                             withAnimation {
-                                fadeInOut.toggle()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                                    isActive = false
-                                })
+                                dismissToast()
                             }
                         })
                     } else {
@@ -82,11 +67,25 @@ public struct ToastView: View {
                     }
                 }
                 .opacity(fadeInOut ? 0 : 1)
+                .onTapGesture {
+                    if options.dismissible {
+                        dismissToast()
+                    }
+                }
                 
-                if position == .top {
+                if options.position == .top {
                     Spacer()
                 }
             }
+        }
+    }
+    
+    func dismissToast() {
+        withAnimation {
+            fadeInOut.toggle()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                isActive = false
+            })
         }
     }
 }
