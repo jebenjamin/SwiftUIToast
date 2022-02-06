@@ -25,7 +25,7 @@ public struct ToastOptions {
     ///    - position: A `ToastPosition` object that corresponds with the location of the toast on the parent view.
     ///    - duration: The time in seconds to display the ToastView before fading away. Optional. If nil, the ToastView will appear indefinitely.
     ///    - dismissable: If true, the ToastView will fade away when tapped.
-    init(
+    public init(
         image: Image? = nil,
         title: String,
         subtitle: String? = nil,
