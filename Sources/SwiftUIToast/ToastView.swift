@@ -72,6 +72,8 @@ public struct ToastView: View {
                         dismissToast()
                     }
                 }
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("\(options.title), \(options.subtitle ?? "")")
                 
                 if options.position == .top {
                     Spacer()
